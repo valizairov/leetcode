@@ -19,8 +19,21 @@ Output: [[1]]
 
 class Solution {
     func permute(_ nums: [Int]) -> [[Int]] {
-        
-        return [[0]]
+        var res = [[Int]]()
+
+        func recursion(_ list: [Int], _ rest: [Int]) {
+            for (i, num) in rest.enumerated() {
+                var list = list
+                var rest = rest
+
+                list.append(num)
+                rest.remove(at: i)
+                if list.count == nums.count {res.append(list)}
+                recursion(list, rest)
+            }
+        }
+        recursion([], nums)
+        return res
     }
 }
 
