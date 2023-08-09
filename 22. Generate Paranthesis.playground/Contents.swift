@@ -15,7 +15,8 @@ Output: ["()"]
 
 class Solution {
     func generateParenthesis(_ n: Int) -> [String] {
-        
+        // one solution can be backtracking
+        // another one can be by keeping track of number of opened and closed paranthesis and making sure that they are valid
         return []
     }
 }
