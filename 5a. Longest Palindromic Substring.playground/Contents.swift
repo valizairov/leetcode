@@ -10,6 +10,11 @@
  Example 2:
  Input: s = "cbbd"
  Output: "bb"
+ 
+ Approach 1:
+    Find the number of occurrences for each character.
+    Calculate the maximum match for each character
+    If the result is less than the original string length, we can add one character to the maximum result's center.
  */
 
 class Solution {
