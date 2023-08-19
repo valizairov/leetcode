@@ -18,6 +18,12 @@
  Example 3:
  Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]
  Output: false
+ 
+ 
+ Approach 1:
+    Use dynamic programming
+ Approach 2:
+    Backtracking. This is 2^n time complexity
  */
 
 class Solution {
