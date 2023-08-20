@@ -24,6 +24,9 @@
     Use dynamic programming
  Approach 2:
     Backtracking. This is 2^n time complexity
+ Approach 3:
+    Linear approach using a hash table
+ 
  */
 
 class Solution {
