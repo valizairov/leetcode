@@ -22,6 +22,9 @@
  Output: [10]
  Explanation: The 2 and -5 collide resulting in -5. The 10 and -5 collide resulting in 10.
  
+ Edge case:
+    What if first explosion will be equal to 0?
+ 
  Approach 1:
     Use Two dimensional Matrix
  */
