@@ -15,19 +15,15 @@
  Input: nums = [1,1,1,3,3,4,3,2,4,2]
  Output: true
 
+ Approach 1: Use sets - if contains - O(n)
+ Approach 2: Use dictionary - if contains - O(n)
+ Approach 3: Sort and compare if a[i] == a[i+1] return true - O(n x log n)
+ 
  */
 
 class Solution {
     func containsDuplicate(_ nums: [Int]) -> Bool {
-        var set = Set<Int>()
-        for num in nums {
-            if set.contains(num) {
-                return true
-            } else {
-                set.insert(num)
-            }
-        }
-        return false
+        nums.count != Set(nums).count
     }
 }
 
