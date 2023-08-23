@@ -16,14 +16,16 @@
 
 class Solution {
     func generate(_ numRows: Int) -> [[Int]] {
-        var array = [[Int]]()
-        for i in 1...numRows {
-            var ja = [Int]()
-            for j in 1...i {
-                print(i,j)
-                
+        guard numRows > 0 else { return [[]] }
+        guard numRows > 1 else { return [[1]] }
+        guard numRows > 2 else { return [[1],[1,1]] }
+        var array = [[1],[1,1]]
+        for i in 2...numRows {
+            array[i][0] = 1
+            for j in 1..<i-1 {
+//                print(i,j)
+                array[i][j] = array[i-1][j-2] + array[i-1][j-1]
             }
-            print("--")
         }
         return array
     }
