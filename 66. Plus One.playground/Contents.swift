@@ -30,6 +30,30 @@
 
 class Solution {
     func plusOne(_ digits: [Int]) -> [Int] {
-        return []
+        var result = [Int]()
+        var c = 0
+        var once = 1
+        for (i,e) in digits.enumerated().reversed()
+        {
+            var r = e + once + c
+            once = 0
+            if r == 10 {
+                r = 0
+                c = 1
+            } else {
+                c = 0
+            }
+            result.append(r)
+            if c == 1 && i == 0 {
+                result.append(1)
+            }
+        }
+        return result.reversed()
     }
 }
+
+Solution().plusOne([1,2,3]) //[1,2,4]
+Solution().plusOne([4,3,2,1]) //[4,3,2,2]
+Solution().plusOne([9]) //[1,0]
+Solution().plusOne([9,9]) //[1,0]
+
