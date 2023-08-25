@@ -23,9 +23,79 @@
 
 class Solution {
     func climbStairs(_ n: Int) -> Int {
-        return 0
+        guard n > 2 else { return n}
+        
+        //helper func
+        func fillTwos(_ n: Int, _ total: Int) -> [Int] {
+            var ar = [Int]()
+            var left = total
+            for _ in 0..<n {
+                ar.append(2)
+                left = left - 2
+            }
+            for _ in 0..<left {
+                ar.append(1)
+            }
+            return ar
+        }
+        
+        func distinctArrays(_ n: Int) -> [[Int]] {
+            var perm = [[Int]]()
+            for i in 0...n/2 {
+                let ar = fillTwos(i, n)
+                perm.append(ar)
+            }
+            //print(perm)
+            return perm
+        }
+        
+        //(1)
+        var ar = distinctArrays(n)
+        for a in ar {
+            
+        }
+        
+        func variations(_ ar: [Int]) -> [[Int]] {
+            var result = [[Int]]()
+            result.append(ar)
+            guard ar.count > 0 else { return [[]] }
+            guard ar.count > 1 else { return [ar] }
+            var ar = ar
+            for i in 0..<ar.count {
+                for j in i+1..<ar.count {
+                    let temp = ar[i]
+                    ar[i] = ar[j]
+                    ar[j] = temp
+                    result.append(ar)
+                }
+            }
+            //print(result)
+            return result
+        }
+        
+        //(2)
+        let v = variations(ar)
+        //let v = variations([1,2,3,4])
+        
+        
+        func distVariations(_ ar: [[Int]]) -> Int {
+            var set = Set<String>()
+            for a in ar {
+                var s = ""
+                for e in a {
+                    s = s + String(e)
+                }
+                set.insert(s)
+            }
+            
+            return set.count
+        }
+        
+        return distVariations(v)
     }
 }
 
 //Solution().climbStairs(2) // 2
-Solution().climbStairs(5) // 3
+//Solution().climbStairs(5) // 3
+//Solution().climbStairs(4) // 5
+Solution().climbStairs(6) // 13
