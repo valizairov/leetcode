@@ -20,6 +20,14 @@
 
 class Solution {
     func mySqrt(_ x: Int) -> Int {
+        guard x > 0 else { return 0 }
+        guard x > 1 else { return 1 }
+        
+        for i in 1..<UInt32.max {
+            if i*i > x {
+                return Int(i-1)
+            }
+        }
         return 0
     }
 }
