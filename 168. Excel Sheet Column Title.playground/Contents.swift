@@ -1,5 +1,5 @@
 /*
- 168. Excel Sheet Column Title - Easy
+ 168. Excel Sheet Column Title - Easy 
  
  Given an integer columnNumber, return its corresponding column title as it appears in an Excel sheet.
 
@@ -29,6 +29,13 @@
 
 class Solution {
     func convertToTitle(_ columnNumber: Int) -> String {
+        let letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+        var res = ""
+        for i in 0..<columnNumber/26 {
+            res = res + letters[i]
+        }
+
+        
         return ""
     }
 }
