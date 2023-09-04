@@ -15,6 +15,7 @@
 
 
 class Solution {
+    
     func majorityElement(_ nums: [Int]) -> Int {
         let a = nums.sorted(by:<)[nums.count/2]
         //nums.sorted(by:<)[nums.count/2]
