@@ -15,28 +15,24 @@
 
 
 class Solution {
-    
-    func majorityElement(_ nums: [Int]) -> Int {
-        let a = nums.sorted(by:<)[nums.count/2]
-        //nums.sorted(by:<)[nums.count/2]
-        print(a)
-//        guard nums.count > 0 else { return 0 }
-//        guard nums.count > 1 else { return nums[0] }
-//        var dict = [Int: Int]()
-//        for e in nums {
-//            if dict[e] != nil {
-//                dict[e]! += 1
-//                if dict[e]! > nums.count/2 { return e }
-//            } else {
-//                dict[e] = 1
-//            }
-//        }
+     func majorityElement(_ nums: [Int]) -> Int {
+         guard nums.count > 0 else { return 0 }
+         guard nums.count > 1 else { return nums[0] }
+         var dict = [Int: Int]()
+         for e in nums {
+             if dict[e] != nil {
+                 dict[e]! += 1
+                 if dict[e]! > nums.count/2 { return e }
+             } else {
+                 dict[e] = 1
+             }
+         }
         return 0
     }
 }
 
-//Solution().majorityElement([3,2,3]) //3
+Solution().majorityElement([3,2,3]) //3
 Solution().majorityElement([2,2,1,1,1,2,2]) //2
-//Solution().majorityElement([1]) //1
+Solution().majorityElement([1]) //1
 
 
