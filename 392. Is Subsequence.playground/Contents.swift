@@ -15,9 +15,26 @@
 
 class Solution {
     func isSubsequence(_ s: String, _ t: String) -> Bool {
-        return false
+        var i = 0; var found = 0
+        for c in s {
+            while i < t.count {
+                if c == t[t.index(t.startIndex, offsetBy: i)] {
+                    print("found: \(c)")
+                    found += 1
+                    i += 1
+                    break
+                }
+                i += 1
+            }
+        }
+        return found == s.count
     }
 }
 
 Solution().isSubsequence("abc", "ahbgdc") //true
-Solution().isSubsequence("axc", "ahbgdc") //true
+Solution().isSubsequence("axc", "ahbgdc") //false
+Solution().isSubsequence("ab", "baab") //true
+Solution().isSubsequence("aaaaaa", "bbaaaa") //false
+
+
+
