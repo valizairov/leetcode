@@ -31,7 +31,14 @@
  myStack.empty(); // return False
 
  */
-
+class Queue {
+    var array = [Int]()
+    //push to back, peek/pop from front, size and is empty
+    func push(_ x: Int) {
+        
+    }
+    
+}
 
 class MyStack {
 
@@ -52,7 +59,7 @@ class MyStack {
     }
     
     func empty() -> Bool {
-        
+        return
     }
 }
 
