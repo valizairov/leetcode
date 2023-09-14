@@ -35,10 +35,24 @@ class Queue {
     func push(_ x: Int) {
         
     }
+    func peek() -> Int {
+        
+    }
+    func pop() {
+        
+    }
+    func size() -> Int {
+        
+    }
+    func isEmpty() -> Bool {
+        
+    }
     
 }
 
 class MyStack {
+    
+    var queue = Queue()
 
     init() {
         
@@ -53,11 +67,11 @@ class MyStack {
     }
     
     func top() -> Int {
-        
+        return 0
     }
     
     func empty() -> Bool {
-        return
+        return queue.isEmpty()
     }
 }
 
