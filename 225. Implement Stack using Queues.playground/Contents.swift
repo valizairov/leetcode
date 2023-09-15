@@ -29,23 +29,29 @@
  myStack.empty(); // return False
 
  */
-class Queue {
-    var array = [Int]()
-    //push to back, peek/pop from front, size and is empty
-    func push(_ x: Int) {
-        
+
+
+public struct Queue {
+    fileprivate var array = [Int]()
+
+    public mutating func enqueue(_ x: Int) {
+        array.append(x)
     }
-    func peek() -> Int {
-        
+    
+    public mutating func dequeue() {
+        array.removeFirst()
     }
-    func pop() {
-        
+    
+    public var isEmpty: Bool {
+        return array.isEmpty
     }
-    func size() -> Int {
-        
+    
+    public var count: Int {
+        return array.count
     }
-    func isEmpty() -> Bool {
-        
+    
+    public var front: Int {
+        return array[0]
     }
     
 }
@@ -71,7 +77,7 @@ class MyStack {
     }
     
     func empty() -> Bool {
-        return queue.isEmpty()
+        return queue.isEmpty
     }
 }
 
