@@ -38,8 +38,8 @@ public struct Queue {
         array.append(x)
     }
     
-    public mutating func dequeue() {
-        array.removeFirst()
+    public mutating func dequeue() -> Int {
+        return array.removeFirst()
     }
     
     public var isEmpty: Bool {
@@ -56,27 +56,24 @@ public struct Queue {
     
 }
 
-class MyStack {
-    
-    var queue = Queue()
+public struct MyStack {
+    fileprivate var queue = Queue()
 
-    init() {
-        
+    init() {}
+    
+    public mutating func push(_ x: Int) {
+        queue.enqueue(x)
     }
     
-    func push(_ x: Int) {
-        
+    public mutating func pop() -> Int {
+        return queue.dequeue()
     }
     
-    func pop() -> Int {
-        
+    public func top() -> Int {
+        return queue.last
     }
     
-    func top() -> Int {
-        return 0
-    }
-    
-    func empty() -> Bool {
+    public var empty: Bool {
         return queue.isEmpty
     }
 }
