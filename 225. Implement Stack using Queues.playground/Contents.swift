@@ -70,7 +70,7 @@ public struct MyStack {
     }
     
     public func top() -> Int {
-        return queue.last
+        return queue.count
     }
     
     public var empty: Bool {
