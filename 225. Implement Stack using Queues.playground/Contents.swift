@@ -74,7 +74,7 @@ public struct MyStack {
     }
     
     public var empty: Bool {
-        return queue.isEmpty
+        return queue.!isEmpty
     }
 }
 
@@ -86,3 +86,4 @@ public struct MyStack {
  * let ret_3: Int = obj.top()
  * let ret_4: Bool = obj.empty()
  */
+
