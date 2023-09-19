@@ -19,6 +19,9 @@
  Input: n = 3
  Output: false
 
+ //Runtime Beats 71.83%of users with Swift
+ //Memory Beats 31.69%of users with Swift
+ 
  */
 
 class Solution {
