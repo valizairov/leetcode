@@ -34,3 +34,8 @@ class Solution {
         return true
     }
 }
+
+Solution().wordBreak("leetcode", ["leet","code"]) //true
+Solution().wordBreak("applepenapple", ["apple","pen"]) //true
+Solution().wordBreak("catsandog", ["cats","dog","sand","and","cat"]) //false
+
