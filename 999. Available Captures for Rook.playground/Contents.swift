@@ -50,33 +50,66 @@
 class Solution {
     func numRookCaptures(_ board: [[Character]]) -> Int {
         var x=0, y = 0
+        let len = 8
+        var rooksRow = [Character]()
+        var rooksColumn = [Character]()
+        
         func findRookPosition() {
             for (i, arr) in board.enumerated() {
                 for (j, cha) in arr.enumerated() {
                     if cha == "R" {
+                        rooksRow = arr // remember row
                         x = j
                         y = i
                     }
                 }
             }
+            
+            //remember the column
+            for (i, arr) in board.enumerated() {
+                for (j, cha) in arr.enumerated() {
+                    if j == x {
+                        rooksColumn.append(cha)
+                    }
+                }
+            }
         }
         func rookEatsLeft() -> Int {
+            return canEatPawn(rooksRow.reversed())
+        }
+        func canEatPawn(_ array: [Character]) -> Int {
+            for (i, cha) in rooksRow.enumerated() {
+                if i > x {
+                    if cha == "B" {
+                        return 0
+                    } else if cha == "p" {
+                        return 1
+                    }
+                }
+            }
             return 0
         }
         func rookEatsRight() -> Int {
-            return 0
+            return canEatPawn(rooksRow)
         }
         func rookEatsUp() ->Int {
-            return 0
+            return canEatPawn(rooksColumn.reversed())
         }
         func rookEatsDown() -> Int {
-            return 0
+            return canEatPawn(rooksColumn)
         }
         
         findRookPosition()
         return rookEatsUp() + rookEatsDown() + rookEatsLeft() + rookEatsRight()
     }
 }
-let board1: [[Character]] = [[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".","R",".",".",".","p"],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]]
+let board1: [[Character]] = [[".",".",".",".",".",".",".","."],
+                             [".",".",".","p",".",".",".","."],
+                             [".",".",".","R",".",".",".","p"],
+                             [".",".",".",".",".",".",".","."],
+                             [".",".",".",".",".",".",".","."],
+                             [".",".",".","p",".",".",".","."],
+                             [".",".",".",".",".",".",".","."],
+                             [".",".",".",".",".",".",".","."]]
 Solution().numRookCaptures(board1) //3
 
