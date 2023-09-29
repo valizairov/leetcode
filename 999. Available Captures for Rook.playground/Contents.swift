@@ -49,9 +49,16 @@
 
 class Solution {
     func numRookCaptures(_ board: [[Character]]) -> Int {
-        var x: Int, y: Int
+        var x=0, y = 0
         func findRookPosition() {
-            
+            for (i, arr) in board.enumerated() {
+                for (j, cha) in arr.enumerated() {
+                    if cha == "R" {
+                        x = j
+                        y = i
+                    }
+                }
+            }
         }
         func rookEatsLeft() -> Int {
             return 0
@@ -72,3 +79,4 @@ class Solution {
 }
 let board1: [[Character]] = [[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".","R",".",".",".","p"],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".","p",".",".",".","."],[".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".","."]]
 Solution().numRookCaptures(board1) //3
+
