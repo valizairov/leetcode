@@ -1,5 +1,4 @@
 /*
-
  118. Pascal's Triangle - Easy - 1
  
  Given an integer numRows, return the first numRows of Pascal's triangle.
