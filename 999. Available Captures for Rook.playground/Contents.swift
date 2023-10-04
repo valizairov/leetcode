@@ -64,9 +64,8 @@ class Solution {
                     }
                 }
             }
-            
             //remember the column
-            for (i, arr) in board.enumerated() {
+            for (_, arr) in board.enumerated() {
                 for (j, cha) in arr.enumerated() {
                     if j == x {
                         rooksColumn.append(cha)
@@ -74,11 +73,10 @@ class Solution {
                 }
             }
         }
-        func rookEatsLeft() -> Int {
-            return canEatPawn(rooksRow.reversed())
-        }
         func canEatPawn(_ array: [Character]) -> Int {
-            for (i, cha) in rooksRow.enumerated() {
+            print(array)
+            for (i, cha) in array.enumerated() {
+                print(cha)
                 if i > x {
                     if cha == "B" {
                         return 0
@@ -89,6 +87,10 @@ class Solution {
             }
             return 0
         }
+        func rookEatsLeft() -> Int {
+            return canEatPawn(rooksRow.reversed())
+        }
+
         func rookEatsRight() -> Int {
             return canEatPawn(rooksRow)
         }
@@ -103,13 +105,38 @@ class Solution {
         return rookEatsUp() + rookEatsDown() + rookEatsLeft() + rookEatsRight()
     }
 }
-let board1: [[Character]] = [[".",".",".",".",".",".",".","."],
-                             [".",".",".","p",".",".",".","."],
-                             [".",".",".","R",".",".",".","p"],
-                             [".",".",".",".",".",".",".","."],
-                             [".",".",".",".",".",".",".","."],
-                             [".",".",".","p",".",".",".","."],
-                             [".",".",".",".",".",".",".","."],
-                             [".",".",".",".",".",".",".","."]]
+
+let board1: [[Character]] = [
+[".",".",".",".",".",".",".","."],
+[".",".",".","p",".",".",".","."],
+[".",".",".","R",".",".",".","p"],
+[".",".",".",".",".",".",".","."],
+[".",".",".",".",".",".",".","."],
+[".",".",".","p",".",".",".","."],
+[".",".",".",".",".",".",".","."],
+[".",".",".",".",".",".",".","."]]
 Solution().numRookCaptures(board1) //3
 
+let board2: [[Character]] = [
+[".",".",".",".",".",".",".","."],
+[".","p","p","p","p","p",".","."],
+[".","p","p","B","p","p",".","."],
+[".","p","B","R","B","p",".","."],
+[".","p","p","B","p","p",".","."],
+[".","p","p","p","p","p",".","."],
+[".",".",".",".",".",".",".","."],
+[".",".",".",".",".",".",".","."]]
+
+Solution().numRookCaptures(board2) //0
+
+let board3: [[Character]] = [
+[".",".",".",".",".",".",".","."],
+[".",".",".","p",".",".",".","."],
+[".",".",".","p",".",".",".","."],
+["p","p",".","R",".","p","B","."],
+[".",".",".",".",".",".",".","."],
+[".",".",".","B",".",".",".","."],
+[".",".",".","p",".",".",".","."],
+[".",".",".",".",".",".",".","."]]
+
+Solution().numRookCaptures(board3) //3
