@@ -68,7 +68,7 @@ class Solution2 {
 //Solution().convertToTitle(1) //A
 //Solution().convertToTitle(28) //AB
 //Solution().convertToTitle(146) //EP
-Solution2().convertToTitle(701) //ZY
+//Solution2().convertToTitle(701) //ZY
 //Solution().convertToTitle(702) //ZZ
 //Solution().convertToTitle(703) //AAA
 //Solution().convertToTitle(2147483647) //last case not working
