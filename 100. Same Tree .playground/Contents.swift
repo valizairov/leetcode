@@ -30,23 +30,59 @@ public class TreeNode {
         self.right = right
     }
 }
- 
+
 class Solution {
     func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
-        return false
+        if p == nil && q == nil { return true }
+        if p?.val != q?.val {
+            return false
+        } else {
+            return p!.val == q!.val && isSameTree(p?.left, q?.left) && isSameTree(p?.right, q?.right)
+        }
     }
 }
 
-//Input: p = [1,2,3], q = [1,2,3]
+//Input: p = [1,2,3], q = [1,2,3] / true
+//let p1 = TreeNode(1)
+//let p2 = TreeNode(2)
+//let p3 = TreeNode(3)
+//p1.left = p2
+//p1.right = p3
+//
+//let q1 = TreeNode(1)
+//let q2 = TreeNode(2)
+//let q3 = TreeNode(3)
+//q1.left = q2
+//q1.right = q3
+//
+//Solution().isSameTree(p1, q1)
+
+
+//Input: p = [1,2], q = [1,null,2] //Output: false
+//let p1 = TreeNode(1)
+//let p2 = TreeNode(2)
+//p1.right = p2
+//
+//let q1 = TreeNode(1)
+//let q2 = TreeNode()
+//let q3 = TreeNode(3)
+//q1.left = q2
+//q1.right = q3
+//
+//Solution().isSameTree(p1, q1)
+
+
+
+//Input: p = [1,2,1], q = [1,1,2] //Output: false
 let p1 = TreeNode(1)
 let p2 = TreeNode(2)
-let p3 = TreeNode(3)
+let p3 = TreeNode(1)
 p1.left = p2
 p1.right = p3
 
 let q1 = TreeNode(1)
-let q2 = TreeNode(2)
-let q3 = TreeNode(3)
+let q2 = TreeNode(1)
+let q3 = TreeNode(2)
 q1.left = q2
 q1.right = q3
 
