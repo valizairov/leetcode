@@ -39,3 +39,35 @@ class Solution {
         return false
     }
 }
+
+//Example 1: Input: root = [1,2,2,3,4,4,3] //Output: true
+//let p1 = TreeNode(1)
+//let p2 = TreeNode(2)
+//let p3 = TreeNode(3)
+//let p4 = TreeNode(4)
+//let q2 = TreeNode(2)
+//let q3 = TreeNode(3)
+//let q4 = TreeNode(4)
+//p1.left = p2
+//p2.left = p3
+//p2.right = p4
+//p1.right = q2
+//q2.left = q4
+//q2.right = q3
+//
+//Solution().isSymmetric(p1)
+
+
+
+//Example 2: Input: root = [1,2,2,3,4,4,3] //Output: true
+let p1 = TreeNode(1)
+let p2 = TreeNode(2)
+let p3 = TreeNode(3)
+let q2 = TreeNode(2)
+let q3 = TreeNode(3)
+p1.left = p2
+p2.right = p3
+p1.right = q2
+q2.right = q3
+
+Solution().isSymmetric(p1)
