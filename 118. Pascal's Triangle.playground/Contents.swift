@@ -12,7 +12,7 @@
  Input: numRows = 1
  Output: [[1]]
  */
-
+ 
 
 class Solution {
     func generate(_ numRows: Int) -> [[Int]] {
