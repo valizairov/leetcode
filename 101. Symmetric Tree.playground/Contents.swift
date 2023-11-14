@@ -21,7 +21,7 @@
  */
 
 //Definition for a binary tree node.
-public class TreeNode {
+public class TreeNode { 
     public var val: Int
     public var left: TreeNode?
     public var right: TreeNode?
