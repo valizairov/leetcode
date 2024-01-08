@@ -77,7 +77,7 @@ class Solution {
             print(array)
             for (i, cha) in array.enumerated() {
                 print(cha, i, x)
-                if i > x {
+                if i >= x { // look at values after the rook position
                     if cha == "B" {
                         print("B!")
                         return 0
@@ -104,8 +104,7 @@ class Solution {
         }
         
         findRookPosition()
-        //return rookEatsUp() + rookEatsDown() + rookEatsLeft() + rookEatsRight()
-        return rookEatsLeft()
+        return rookEatsUp() + rookEatsDown() + rookEatsLeft() + rookEatsRight()
     }
 }
 //
@@ -143,7 +142,7 @@ class Solution {
 //[".",".",".",".",".",".",".","."]]
 //
 //Solution().numRookCaptures(board3) //3
-
+/*
 let board4: [[Character]] = [
 [".",".",".",".",".",".",".","."],
 [".",".","B","B","B","B","B","."],
@@ -155,3 +154,16 @@ let board4: [[Character]] = [
 [".",".",".",".",".",".",".","."]]
 
 Solution().numRookCaptures(board4) //4
+*/
+
+let board5: [[Character]] = [
+    [".",".",".",".",".",".",".","."],
+    [".",".",".","p",".",".",".","."],
+    [".",".",".","B",".",".",".","."],
+    [".","p","B","R","p","B","p","."],
+    [".",".",".","p","p",".",".","."],
+    [".",".",".","B",".",".",".","."],
+    [".",".",".","p",".",".",".","."],
+    [".",".",".",".",".",".",".","."]
+]
+Solution().numRookCaptures(board5) //2
