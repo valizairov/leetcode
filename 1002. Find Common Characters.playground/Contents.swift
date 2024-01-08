@@ -15,6 +15,7 @@
  */
 class Solution {
     func commonChars(_ words: [String]) -> [String] {
+        // Possible way is to use the dictionary of characters in 1st word, and look at them at each next word and eliminate if not found.
         return []
     }
 }
