@@ -74,10 +74,11 @@ class Solution {
             }
         }
         func canEatPawn(_ array: [Character]) -> Int {
+            var metRook = false
             print(array)
             for (i, cha) in array.enumerated() {
                 print(cha, i, x)
-                if i >= x { // look at values after the rook position
+                if metRook { //now let's see what rook can eat
                     if cha == "B" {
                         print("B!")
                         return 0
@@ -86,6 +87,7 @@ class Solution {
                         return 1
                     }
                 }
+                if cha == "R" { metRook = true }
             }
             return 0
         }
