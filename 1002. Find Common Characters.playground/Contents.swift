@@ -23,13 +23,22 @@ extension String {
 class Solution {
     func commonChars(_ words: [String]) -> [String] {
         if words.count == 0 { return [] }
-        let word = words[0]
-        if word == "" { return [] }
-        if word.count == 1 { return [String(word[0])] }
-        for i in 1..<words.count {
-            print(words[i])
+        var word0 = words[0]
+        if word0 == "" { return [] }
+        if word0.count == 1 { return [String(word0[0])] }
+        var sets = [Set<Character>]()
+        for word in words {
+            let set: Set<Character> = Set(word)
+            sets.append(set)
         }
-        // Possible way is to use the dictionary of characters in 1st word, and look at them at each next word and eliminate if not found.
+        var setA = sets[0]
+        for set in sets {
+            print("setA: \(setA), set: \(set)")
+            setA = setA.intersection(set)
+        }
+        print("==========>")
+        print(setA)
+
         return []
     }
 }
