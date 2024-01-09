@@ -45,3 +45,6 @@ class Solution {
 let result = Solution().findJudge(3, [[1,3],[2,3],[3,1]])
 let result2 = Solution().findJudge(2, [[1,2]])
 let result3 = Solution().findJudge(3, [[1,3],[2,3]])
+let result4 = Solution().findJudge(4, [[1,3],[1,4],[2,3],[2,4],[4,3]]) //3
+//People can trust other people too, not only the judge. That is why 4-> 3 is showing that 3 is the judge
+//This needs to be solved using tree
