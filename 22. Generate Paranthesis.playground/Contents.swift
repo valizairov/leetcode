@@ -15,8 +15,27 @@ Output: ["()"]
 
 class Solution {
     func generateParenthesis(_ n: Int) -> [String] {
-        // one solution can be backtracking
-        // another one can be by keeping track of number of opened and closed paranthesis and making sure that they are valid
-        return []
+        guard n > 0 else { return [""] }
+        var result = [String]()
+        for i in 0..<n {
+            for l in generateParenthesis(i) {
+                for r in generateParenthesis(n - 1 - i) {
+                    result.append("(" + l + ")" + r)
+                }
+            }
+        }
+        return result
+//        guard n > 0 else { return [""] }
+//        var result = [String]()
+//        for i in 0 ..< n {
+//            let r = generateParenthesis(n-1-i)
+//            generateParenthesis(i).forEach { l in
+//                result.append(contentsOf: r.map{ "(\(l))\($0)" })
+//            }
+//        }
+//        return result
     }
 }
+
+let result = Solution().generateParenthesis(1) //["()"]
+let result3 = Solution().generateParenthesis(3) //["((()))","(()())","(())()","()(())","()()()"]
