@@ -7,6 +7,7 @@
  For example, given the string "the quick brown fox jumps over the lazy dog" and k = 10, you should return: ["the quick", "brown fox", "jumps over", "the lazy", "dog"]. No string in the list has a length of more than 10.
  */
 
+
 class Solution {
     func breakupString(_ s: String, _ k: Int) -> [String]? {
         func stringToArray(_ s: String) -> [String] {
